@@ -9,8 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        superior: "url('/imgs/textura-inf-2.jpg')",
-        inferior: "url('/imgs/textura-sup-2.jpg')",
+        superior: "url('/imgs/textura-sup-2.jpg')",
+        inferior: "url('/imgs/textura-inf-2.jpg')",
+        medio: "url('/imgs/tim-mossholder.jpg)",
+        textura: "url('/imgs/tim-mossholder.jpg')",
+        texturabeige: "url('/imgs/stepan-sargsyan.jpg')",
+        texturapink: "url('/imgs/pawel-czerwinski.jpg')",
+        texturagray: "url('/imgs/augustine-wong.jpg')",
       },
     },
   },
