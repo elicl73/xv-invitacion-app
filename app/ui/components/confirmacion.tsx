@@ -1,15 +1,30 @@
-import React from 'react'
-import {
-  cinzel,
-  cinzelDecorative,
-  josefinSlab,
-  montserrat,
-  tangerine,
-} from '../fonts'
-import Link from 'next/link'
+'use client'
+
+import { useState } from 'react'
 import { IoLogoWhatsapp } from 'react-icons/io'
+import { cinzel, cinzelDecorative, montserrat, tangerine } from '../fonts'
+import Link from 'next/link'
 
 export default function Confirmacion() {
+  const [nombre, setNombre] = useState('')
+  const [personas, setPersonas] = useState('')
+  const [respuesta, setRespuesta] = useState('')
+
+  const handleLink = () => {
+    let textPerson = ''
+    if (personas === '1') {
+      textPerson = 'persona'
+    } else {
+      textPerson = 'personas'
+    }
+    if (respuesta === 'Si') {
+      return `https://wa.me/5217222640836/?text=Yo+${nombre}+confirmo+mi+asistencia+somos+en+total+${personas}+${textPerson}`
+    } else if (respuesta === 'No') {
+      return `https://wa.me/5217222640836/?text=Yo+${nombre}+lamento+no+poder+asistir+agradezco+la+invitación`
+    }
+    return '/'
+  }
+
   return (
     <div className="flex flex-col items-center justify-center bg-superior bg-[#FEFAFB] bg-top bg-repeat-x bg-[length:450px_auto]">
       <div className="w-screen bg-inferior bg-bottom bg-repeat-x bg-[length:450px_auto] overflow-hidden">
@@ -23,23 +38,53 @@ export default function Confirmacion() {
             >
               <label>Nombre</label>
               <input
+                type="text"
+                required={true}
                 className={`${montserrat.className} text-sm w-full rounded-md mb-4 border border-[#C5C1BC] p-1`}
+                onChange={(e) => setNombre(e.target.value)}
               />
-              <label>Apellido</label>
+              <label>No. Personas</label>
               <input
-                className={`${montserrat.className} text-sm w-full rounded-md mb-4 border border-[#C5C1BC] p-1`}
+                type="text"
+                required={true}
+                className={`${montserrat.className} text-sm w-28 rounded-md mb-4 border border-[#C5C1BC] p-1`}
+                onChange={(e) => setPersonas(e.target.value)}
               />
+              <label>¿Podrás Asistir?</label>
+              <div
+                className={`${montserrat.className} text-sm flex felx-col gap-3`}
+              >
+                <span className="flex items-center gap-1">
+                  <input
+                    onChange={(e) => setRespuesta(e.target.value)}
+                    type="radio"
+                    value="Si"
+                    required={true}
+                    name="respuesta"
+                  />
+                  <label>Si</label>
+                </span>
+                <span className="flex items-center gap-1">
+                  <input
+                    onChange={(e) => setRespuesta(e.target.value)}
+                    type="radio"
+                    value="No"
+                    required={true}
+                    name="respuesta"
+                  />
+                  <label>No</label>
+                </span>
+              </div>
             </div>
             <div className="flex items-center justify-center">
               <div
                 className={`flex items-center justify-center text-lg w-60 h-10 border-2 border-[#BAA37D] bg-[#e7dfc0] rounded-md mt-4 hover:bg-white`}
               >
                 <Link
-                  href="https://wa.me/5217222640836/?text=Confirmo+mi+asistencia"
-                  className="
-                flex items-center justify-center gap-2"
+                  href={handleLink()}
+                  className={`${cinzel.className} flex text-black items-center justify-center gap-2`}
                 >
-                  <IoLogoWhatsapp size={20} color="black" />
+                  <IoLogoWhatsapp size={20} />
                   <span>Confirmar</span>
                 </Link>
               </div>
