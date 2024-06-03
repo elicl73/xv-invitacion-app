@@ -8,9 +8,9 @@ export default function Vestimenta() {
     <div className="flex flex-col items-center justify-center w-screen">
       <div className="bg-texturagray overflow-hidden">
         <div
-          className={`${cinzelDecorative.className} text-[#B29566] text-lg text-center flex flex-col justify-center items-center w-screen py-6`}
+          className={`${cinzelDecorative.className} text-[#B29566] text-center flex flex-col justify-center items-center w-screen py-6`}
         >
-          <h2 className="pb-6">
+          <h2 className="font-bold text-lg pb-6">
             Código de vestimenta Formal
             <br />
             (Por Favor Abstente de Usar Rosa)

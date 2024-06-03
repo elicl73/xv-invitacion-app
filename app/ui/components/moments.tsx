@@ -2,13 +2,13 @@ import Image from 'next/image'
 
 export default function Moments() {
   return (
-    <div className="flex flex-col items-center justify-center w-screen bg-[#FEFAFB]">
-      <div className="flex flex-col gap-4 justify-center items-center overflow-hidden">
+    <div className="flex flex-col items-center justify-center w-screen bg-texturapink">
+      <div className="overflow-hidden">
         <Image
-          className="rounded-lg"
+          className=""
           src="/imgs/recepcion.jpeg"
-          width="450"
-          height="500"
+          width="400"
+          height="450"
           alt=""
         />
       </div>
