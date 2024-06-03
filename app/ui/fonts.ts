@@ -3,6 +3,7 @@ import {
   Josefin_Slab,
   Cinzel_Decorative,
   Cinzel,
+  Montserrat,
 } from 'next/font/google'
 
 export const josefinSlab = Josefin_Slab({
@@ -18,3 +19,5 @@ export const cinzelDecorative = Cinzel_Decorative({
 })
 
 export const cinzel = Cinzel({ subsets: ['latin'], weight: ['400'] })
+
+export const montserrat = Montserrat({ subsets: ['latin'], weight: ['400'] })
