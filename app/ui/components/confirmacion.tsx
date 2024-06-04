@@ -7,20 +7,14 @@ import Link from 'next/link'
 
 export default function Confirmacion() {
   const [nombre, setNombre] = useState('')
-  const [personas, setPersonas] = useState('')
   const [respuesta, setRespuesta] = useState('')
 
   const handleLink = () => {
-    let textPerson = ''
-    if (personas === '1') {
-      textPerson = 'persona'
-    } else {
-      textPerson = 'personas'
-    }
+    const noCel = '7224244854'
     if (respuesta === 'Si') {
-      return `https://wa.me/5217222640836/?text=Yo+${nombre}+confirmo+mi+asistencia+somos+en+total+${personas}+${textPerson}`
+      return `https://wa.me/${noCel}/?text=Yo+${nombre}+confirmo+mi+asistencia`
     } else if (respuesta === 'No') {
-      return `https://wa.me/5217222640836/?text=Yo+${nombre}+lamento+no+poder+asistir+agradezco+la+invitación`
+      return `https://wa.me/${noCel}/?text=Yo+${nombre}+lamento+no+poder+asistir+agradezco+la+invitación`
     }
     return '/'
   }
@@ -42,13 +36,6 @@ export default function Confirmacion() {
                 required={true}
                 className={`${montserrat.className} text-sm w-full rounded-md mb-4 border border-[#C5C1BC] p-1`}
                 onChange={(e) => setNombre(e.target.value)}
-              />
-              <label>No. Personas</label>
-              <input
-                type="text"
-                required={true}
-                className={`${montserrat.className} text-sm w-28 rounded-md mb-4 border border-[#C5C1BC] p-1`}
-                onChange={(e) => setPersonas(e.target.value)}
               />
               <label>¿Podrás Asistir?</label>
               <div

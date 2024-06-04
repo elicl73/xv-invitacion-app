@@ -16,13 +16,9 @@ export default function Vestimenta() {
             (Por Favor Abstente de Usar Rosa)
           </h2>
           <div className="pb-6">
-            <h3 className={`${cinzel.className} text-black`}>
-              Mujeres Vestido Largo
-            </h3>
             <GiLargeDress size={200} opacity={0.9} />
           </div>
           <div className="pb-6">
-            <h3 className={`${cinzel.className} text-black`}>Hombres Traje</h3>
             <FaUserTie size={200} opacity={0.9} />
           </div>
         </div>
