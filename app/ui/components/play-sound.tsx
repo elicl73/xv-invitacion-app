@@ -18,7 +18,7 @@ const PlaySound: React.FC<PlaySoundProps> = ({ closeModal }) => {
   }
 
   return (
-    <div className="flex justify-center items-center w-full h-full bg-gray-60 absolute overflow-hidden">
+    <div className="flex justify-center items-end pb-20 w-full h-full bg-gray-60 absolute overflow-hidden">
       <div
         className={`${cinzel.className} flex flex-col items-center gap-8 w-96 h-60 p-6 shadow-xl shadow-black bg-gray-200 rounded-xl`}
       >
