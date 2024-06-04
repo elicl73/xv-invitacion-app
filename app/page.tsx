@@ -9,7 +9,7 @@ import Confirmacion from './ui/components/confirmacion'
 import Moments from './ui/components/moments'
 import PlaySound from './ui/components/play-sound'
 
-export default function Home() {
+export default function HomePage() {
   const [openModal, setOpenModal] = useState(true)
 
   return (
